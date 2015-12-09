@@ -29,15 +29,7 @@ Puppet::Reports.register_report(:irc) do
     # Bail early only if it's an unchanged puppet run
     return if self.status == 'unchanged'
 
-    if self.status == 'failed'
-      output = []
-      self.logs.each do |log|
-        output << log
-      end
-      if self.environment.nil?
-        self.environment == 'production'
-      end
-      CONFIG[:timeout] ||= 8
+    CONFIG[:timeout] ||= 8
 
     output = []
 
