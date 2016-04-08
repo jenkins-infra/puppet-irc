@@ -133,7 +133,7 @@ class irc (
   file {'ircreporter-yaml-config':
     ensure  => present,
     path    => "${puppet_confdir}/irc.yaml",
-    mode    => 0640,
+    mode    => '0640',
     owner   => $puppet_user,
     group   => 'root',
     content => template("${module_name}/irc.yaml.erb"),
